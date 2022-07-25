@@ -13,6 +13,14 @@ html {
   * {
     box-sizing: border-box;
   }
+  @font-face {
+    font-family: "Roboto";
+    src: url("/Roboto/Roboto-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Shrikhand";
+    src: url("/Shrikhand/Shrikhand-Regular.ttf") format("truetype");
+  }
   body {
     padding:0;
   }
@@ -20,13 +28,38 @@ html {
   h2,
   h3,
   h4 {
-    font-family: "Shrikhand";
+    font-family: 'Shrikhand', cursive;
   }
-  p 
-  a
-  li
+  h1 {
+    margin: 0;
+    box-shadow: 10px 20px 3px black;
+    
+  }
+ h1 img {
+    display: block;
+    max-width: 50%;
+    margin: 15px auto 15px auto;
+    justify-content: center;
+  
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  .h-two /* prend certaines caracteristique du H2 sans le sémantique  */ {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .font-weight-300 {
+    font-weight:300;
+  }
+  .font-weight-500 {
+    font-weight:500;
+  }
+  p,
+  a,
+  li,
   ul {
-    font-family: "roboto";
+    font-family: 'Roboto', sans-serif;
   }
   ul,
 li {
@@ -34,6 +67,9 @@ li {
 }
 a {
     text-decoration: none;
+}
+i {
+    width: 14px;
 }
   /* --------------Sémantique ---------------- */ 
   header, main, footer {
@@ -48,43 +84,92 @@ a {
     background-color: #353535;
     color: white;
   }
-  /*  Header  */    
-  header img {
-    max-width: 50%;
-    margin: 15px auto 15px auto;
+  /* BOUTONS  */
+  .commander__bouton {
+    border:0;
+    border-radius: 30px;
+    padding: 15px 20px 15px 20px;
+    background-image:linear-gradient(to bottom, var(--secondaryColor) 0%, var(--primaryColor) 100%) ;
+    color:white;
+    font-family: 'Roboto';
+    margin-top:10px ;
+    box-shadow: 0px 2px 5px Grey;
+    
   }
+  /*  Header  */    
+ 
   header div {
     width: 100%;
     display: inline-flex;
     justify-content: center;
     background-color: var(--darkGreyColor);
+    box-shadow: inset 0px 2px 3px lightGrey;
   }
   header i {
     margin: auto 10px auto 0;
   }
   /*  MAIN */
-  main section  {
-    padding:30px 13% 15px 13%;
+  .mainHead  {
+    padding:5px 13% 50px 13%;
     justify-content: center;
     text-align: center;
 }
+.fonctionnement {
+    background-color: white;
+    padding: 20px 0 20px 0;   
+}
+.fonctionnement p:first-child {
+    margin: 25px 0 25px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.fonctionnement div p {
+margin: auto ;
 
 
+}
 
+.fonctionnement__bouton {
+    background-color: var(--lightGreyColor);
+    width: 90%;
+    border:0;
+    border-radius: 20px;
+    padding:  0;
+    margin: 0 auto 20px auto;
+    font-family: 'Roboto';
+    display: grid;
+    grid-template-columns:  1fr 1fr 8fr 1fr;
+    
+    
+}
+.fonctionnement i {
+    align-self: center;
+    padding: 0 45px 0 25px;
+}
+.cercleViolet {
+    border-radius: 30px;
+    background-color: var(--primaryColor);
+    color: white;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    font-weight:100;
+    margin-left:-50px;
+    position: relative;
+    left: -32px;
+}
 
   /*  FOOTER    */ 
   footer h2 {
-    margin: 20px 0 0 20px;
+    margin: 20px 0 10px 20px;
   }
-  footer ul {
-    padding: 0 0 20px 20px;
+  footer p, footer a {
+    margin: 12px 0 0 20px;
   }
-  footer li {
-    display: inline;
-    flex-direction: row;
-    margin: 0;
+  footer i {
+    margin-right: 3px; 
   }
   footer a {
    color: white;
+   margin-bottom: 25px;
   }
-  
