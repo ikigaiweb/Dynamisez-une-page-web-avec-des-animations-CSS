@@ -1,0 +1,90 @@
+:root {
+    --primaryColor: #9356DC;
+    --secondaryColor:#FF79DA;
+    --tertiaryColor:#99E2D0;
+    --lightGreyColor:#F6F6F6;
+    --darkGreyColor:#EAEAEA;
+}
+html {
+    background-color:transparent;
+    display: flex;
+    flex-direction: column;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    padding:0;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Shrikhand";
+  }
+  p 
+  a
+  li
+  ul {
+    font-family: "roboto";
+  }
+  ul,
+li {
+  list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+  /* --------------Sémantique ---------------- */ 
+  header, main, footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    background-color: var(--lightGreyColor)
+  }
+  footer {
+    background-color: #353535;
+    color: white;
+  }
+  /*  Header  */    
+  header img {
+    max-width: 50%;
+    margin: 15px auto 15px auto;
+  }
+  header div {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    background-color: var(--darkGreyColor);
+  }
+  header i {
+    margin: auto 10px auto 0;
+  }
+  /*  MAIN */
+  main section  {
+    padding:30px 13% 15px 13%;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+
+  /*  FOOTER    */ 
+  footer h2 {
+    margin: 20px 0 0 20px;
+  }
+  footer ul {
+    padding: 0 0 20px 20px;
+  }
+  footer li {
+    display: inline;
+    flex-direction: row;
+    margin: 0;
+  }
+  footer a {
+   color: white;
+  }
+  
