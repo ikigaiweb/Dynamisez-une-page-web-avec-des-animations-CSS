@@ -163,6 +163,8 @@ i {
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    object-fit: cover;
+    object-position: center; /* a refaire une par une  */ 
     overflow: hidden;
 }
 .bodyCard {
