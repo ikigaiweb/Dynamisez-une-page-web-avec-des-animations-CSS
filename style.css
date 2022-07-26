@@ -149,27 +149,48 @@ i {
     width: 90%;
     margin: 10px 0 10px 0;
     border-radius: 20px;
-    border: 3px solid red
+    
  }
 .headCard {
     width: 100%;
+    height: 170px;
     background-color: aqua;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.headCard > img {
+    height: 170px;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
 }
 .bodyCard {
-    background-color: darkorange;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 5px 4px lightgray; 
 } 
 .infoCard {
     display: flex;
 flex-direction: column;
     justify-content: flex-start;
     padding-left: 20px;
-    background-color: forestgreen;
-}   
+    border-bottom-left-radius: 20px;
+} 
+.infoCardTitre  {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 12px 0 4px 0;
+}
+.infoCardLieu {
+    margin:4px 0 12px 0
+}
 .bodyCard__i {
-    float:none;
+    margin-right: 25px;
+    align-self: center;
 }                                          
                                                         /* ---------- HEADER ---------- */    
  
@@ -199,10 +220,14 @@ flex-direction: column;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 35px 0 50px 0;
+}
+.restaurant .commeUnTitre {
+    margin-right: auto;
 }
 .commeUnTitre {
     margin: 25px 0 25px 20px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
                                                                         /* --------- FOOTER  ---------  */ 
