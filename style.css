@@ -35,7 +35,7 @@ html {
     margin: 0;
     box-shadow: 10px 20px 3px black; 
   }
- h1 img {
+ h1 img, header img {
     display: block;
     max-width: 50%;
     margin: 15px auto 15px auto;
@@ -67,6 +67,7 @@ li {
 }
 a {
     text-decoration: none;
+    color: black;
 }
 i {
     width: 14px;
@@ -89,11 +90,15 @@ i {
     border:0;
     border-radius: 30px;
     padding: 15px 20px 15px 20px;
-    background-image:linear-gradient(to bottom, var(--secondaryColor) 0%, var(--primaryColor) 100%) ;
+    background-image:linear-gradient(135deg, var(--secondaryColor) 0%, var(--primaryColor) 100%) ;
     color:white;
     font-family: 'Roboto';
     margin-top:10px ;
     box-shadow: 0px 2px 5px Grey;
+  }
+  .commander__bouton:hover, .fonctionnement__bouton:hover /* Boutons :HOVER */ {
+    opacity: 90%;
+    box-shadow: 0px 3px 6px Grey;
   }
                                                 /* -------Fonctionnement Bouton---début----*/
   .fonctionnement__bouton {
@@ -107,6 +112,13 @@ i {
     font-family: 'Roboto';
    display: flex;
    box-shadow: 0px 5px 4px lightgray;  
+}
+.fonctionnement__bouton:hover  {
+  background-color:rgb(147, 86, 220, 0.2);
+  color: var(--primaryColor);
+}
+.fonctionnement__bouton :nth-child(3):hover {
+  color: black !important;
 }
 .fonctionnement__bouton--nombre {
     width: 12.5%;   
@@ -193,7 +205,24 @@ flex-direction: column;
 .bodyCard__i {
     margin-right: 25px;
     align-self: center;
-}                                          
+    width: 25px;
+    height: 25px;
+    position: relative;
+    display: inline-block;
+    margin: 50px; 
+}   
+.bodyCard__i .coeur {
+  display: none;
+  position: absolute;
+  top: -2px;
+  left: -1px;
+  z-index: 99;
+  width: 27px;
+    height: 27px;
+}
+.bodyCard__i:hover .coeur {
+  display: inline;
+}                                       
                                                         /* ---------- HEADER ---------- */    
  
   header div {
@@ -245,4 +274,111 @@ flex-direction: column;
   footer a {
    color: white;
    margin-bottom: 25px;
+  }
+  /*______________________________RESTAURANTS CSS_______________________________________*/
+ .menuEntree p{
+  margin: 0 0 25px 6%;
+ }
+ 
+ .menuCard {
+  background-color: white;
+  width: 90%;
+    margin: 10px auto 10px auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }
+ .menuCard__Plat {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin:15px 0 5px 15px;
+ }
+ .menuCard__Plat p {
+  margin: 0;
+ }
+ .menuCard__Plat__Titre {
+  color:black;
+  font-weight: 500;
+  margin: 0 0 5px 0;
+ }
+ .menuCard__Plat__Detail {
+margin: 5px 0 5px 0;
+font-weight: 100;
+ }
+ .menuCard__Prix {
+  align-items: center;
+  margin: 30px 20px 10px 0;
+ }
+ .menuCard__greenTick {
+  background-color: var(--tertiaryColor);
+  color: var(--tertiaryColor);
+  width: 50px;
+  display: none;
+ }
+ .menuCard:hover {
+  background-color: #9356DC;
+ }
+ 
+ 
+ 
+ .aLaFrancaise header {
+    flex-direction: row;
+  }
+  .arrow {
+   justify-content: center;
+    align-self: center;
+    color: black;
+    position: relative;
+    left: 30px;
+    font-size: 25px;
+  }
+  .aLaFrancaise .topPic {
+    width: 100%;
+    height: auto;
+  }
+  .aLaFrancaise h1 {
+    box-shadow: none;
+    margin: 20px 0 20px 6%
+  }
+  .aLaFrancaise .coeur{
+  width: 27px;
+    height: 27px;
+  }
+  .aLaFrancaise main section {
+    background-color: var(--lightGreyColor);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    position: relative;
+    top: -40px;
+  }
+  .aLaFrancaise .topSection {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .mesCoeurs {
+    width: 27px;
+    height: 27px;
+    margin: 0 20px 0 0;
+    display: inline;
+    align-self: center;
+  }
+  .aLaFrancaise .coeurVide {
+    position: relative;
+    top:10px
+  }
+  .aLaFrancaise .coeur {
+    position: relative;
+    bottom:12px
+  }
+  .mesCoeurs:hover .coeur {
+    display: inline;
+  }              
+  .mesCoeurs .coeur {
+  display: none;
+  z-index: 99;
+  width: 27px;
+    height: 27px;
   }
