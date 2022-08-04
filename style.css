@@ -97,16 +97,18 @@ i {
   border-bottom-color: white;
   animation: spinner 1s linear 3;
   -webkit-animation: spinner 1s linear 3 ;
- 
 }
 
 @keyframes spinner {
-  0% { transform: rotate(0deg); }
+  0% { transform: rotate(0deg); 
+}
   100% { transform: rotate(360deg);
+    ;
  }
 }
 @-webkit-keyframes spinner {
-  0% { transform: rotate(0deg); }
+  0% { transform: rotate(0deg); 
+  }
   100% { transform: rotate(360deg);
      }
 }
@@ -116,7 +118,7 @@ i {
   }
   to {
     opacity: 0%;
-    
+    visibility: hidden;
   }
 }
 @-webkit-keyframes fadeout {
@@ -129,32 +131,116 @@ i {
 
   }
 }
-@keyframes greenCheck {
-  0% { opacity: 0;
-    visibility: hidden; }
-  100% { opacity: 1 ;
- }
+@keyframes fadein {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }
-@-webkit-keyframes greenCheck {
-  0% { opacity: 0; 
-    visibility: hidden;}
-  100% { opacity: 1 ;
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes greenCheck {
+  0% { transform:rotateZ(0deg);}
+  100% { transform:rotateZ(360deg);
      }
 }
-@keyframes moveToLeft {
-  0% {
-      transform: translateX(0px);
+@-webkit-keyframes greenCheck {
+  0% { transform:rotateZ(0deg);}
+  100% { transform:rotateZ(360deg);
+     }
+}
+@keyframes abracadabra-M1 {
+  from {
+    opacity: 0;
   }
-  100% {
-      transform: translateX(-80px);
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
   }
 }
-@-webkit-keyframes moveToLeft {
-  0% {
-      transform: translateX(0px);
+@-webkit-keyframes abracadabra-M1 {
+  from {
+    opacity: 0;
   }
-  100% {
-      transform: translateX(-80px);
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes abracadabra-M2 {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes abracadabra-M2 {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes abracadabra-M3 {
+  from {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  80% {opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes abracadabra-M3 {
+  from {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  80% {opacity: 1;
+  }
+  to {
+    opacity: 1;
   }
 }
 .toque {
@@ -181,11 +267,18 @@ i {
     border:0;
     border-radius: 30px;
     padding: 15px 20px 15px 20px;
-    background-image:linear-gradient(135deg, var(--secondaryColor) 0%, var(--primaryColor) 100%) ;
+    background-image:linear-gradient(165deg, var(--secondaryColor) 0%, var(--primaryColor) 100%) ;
     color:white;
     font-family: 'Roboto';
     margin-top:10px ;
     box-shadow: 0px 2px 5px Grey;
+  }
+  .btn__Menu {
+    padding: 15px 50px 15px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 30px auto;
   }
   .commander__bouton:hover, .fonctionnement__bouton:hover /* Boutons :HOVER */ {
     opacity: 90%;
@@ -310,9 +403,11 @@ flex-direction: column;
   z-index: 99;
   width: 27px;
     height: 27px;
+    transition-duration: 5s;
 }
 .bodyCard__i:hover .coeur {
   display: inline;
+  transition-duration: 2.5s;
 }                                       
                                                         /* ---------- HEADER ---------- */    
  
@@ -336,6 +431,7 @@ flex-direction: column;
     background-color: white;
     padding: 20px 0 20px 0;   
 }
+/*_____________________________________________RESTAURANT (page index)__________________________________*/
 .restaurant {
     background-color: var(--lightGreyColor);
     display: flex;
@@ -356,7 +452,7 @@ flex-direction: column;
     font-size: 1.4rem;
     font-weight: 600;
 }
-                                                                        /* --------- FOOTER  ---------  */ 
+                        /* ____________________--------- FOOTER  --------- ______________________ */ 
   footer h2 {
     margin: 20px 0 10px 20px;
   }
@@ -370,19 +466,27 @@ flex-direction: column;
    color: white;
    margin-bottom: 25px;
   }
-  /*______________________________RESTAURANTS CSS_______________________________________*/
+  /*______________________________RESTAURANTS CSS (les 4 pages )_______________________________________*/
  .menuEntree p{
-  margin: 0 0 25px 6%;
+  margin: 50px 0 5px 6%;
  }
- 
+ .soulignement--vert {
+  content: ""; 
+  width: 40px;
+  margin-left: 6%;
+  border-top: 3px solid var(--tertiaryColor);
+ }
+ /*__________________________________MENU CARD________________________________________________________________*/
  .menuCard {
   background-color: white;
   width: 90%;
-    margin: 10px auto 10px auto;
+  height: 80px;
+    margin: 15px auto 15px auto;
     border-radius: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    box-shadow: 0px 10px 13px 1px rgba(192,192,192,0.4);
  }
  .menuCard__Plat {
   display: flex;
@@ -392,6 +496,9 @@ flex-direction: column;
  }
  .menuCard__Plat p {
   margin: 0;
+  white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
  }
  .menuCard__Plat__Titre {
   color:black;
@@ -404,12 +511,22 @@ font-weight: 100;
  }
  .menuCard__Fin {
   display: flex;
+  overflow: hidden;
+  z-index: 3;
+  
  }
  .menuCard__Prix {
+  display: flex;
   align-items: center;
-  margin: 30px 20px 10px 0;
+  margin: 30px 0 20px 0;
+  width: 50px;
  }
-
+ .menuCard__Prix p {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-top: 20px;
+ }
  .menuCard__greenTick {
   background-color: var(--tertiaryColor);
   border-bottom-right-radius: 20px;
@@ -417,35 +534,50 @@ font-weight: 100;
   width: 80px;
   height: 100%;
   position: relative;
-  visibility: hidden;
-  
-  animation: moveToLeft greenCheck 10s ease 12.2s 1 normal forwards;
-  -webkit-animation: moveToLeft  10s ease 12.2s 1 normal forwards;
+  z-index: 6;
+  transition: all .4s ease-in-out;
+  margin-right: -80px;
  }
  .menuCard__greenTick i {
-  color: var(--tertiaryColor);
+  color: white;
   font-size: 25px;
   width: 30px;
   height: 30px;
   border-radius: 30px;
-  background-color: white;
+  background-color: var(--tertiaryColor);
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   top: 33%;
   left: 33%;
-  
-  
-
+  z-index: 4;
  }
  .menuCard:hover .menuCard__greenTick {
-  animation: greenCheck;
+  margin-right: 0;
+  transition: 0.5s;
  }
-
- 
- 
- .aLaFrancaise header {
+ .menuCard:hover .menuCard__greenTick i {
+  animation: greenCheck;
+  animation-duration: 0.4s;
+  animation-delay: 0.1s;
+ }
+ .menuCard:hover .menuCard__Plat {
+ max-width: 55%;
+ }
+ .M1 {
+  animation-name: abracadabra-M1;
+  animation-duration: 3s;
+ }
+ .M2 {
+  animation-name: abracadabra-M2;
+  animation-duration: 3s;
+ }
+ .M3 {
+  animation-name: abracadabra-M3;
+  animation-duration: 3s;
+ }
+ .menuRestaurant header {
     flex-direction: row;
   }
   .arrow {
@@ -456,26 +588,28 @@ font-weight: 100;
     left: 30px;
     font-size: 25px;
   }
-  .aLaFrancaise .topPic {
+  .menuRestaurant .topPic {
     width: 100%;
     height: auto;
   }
-  .aLaFrancaise h1 {
+  .menuRestaurant h1 {
     box-shadow: none;
-    margin: 20px 0 20px 6%
+    font-weight: 100;
+    margin: 20px 0 -10px 6%
   }
-  .aLaFrancaise .coeur{
+  .menuRestaurant .coeur{
   width: 27px;
     height: 27px;
   }
-  .aLaFrancaise main section {
+  .menuRestaurant main section {
     background-color: var(--lightGreyColor);
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     position: relative;
     top: -40px;
+    z-index: 7;
   }
-  .aLaFrancaise .topSection {
+  .menuRestaurant .topSection {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -487,20 +621,23 @@ font-weight: 100;
     display: inline;
     align-self: center;
   }
-  .aLaFrancaise .coeurVide {
+  .menuRestaurant .coeurVide {
     position: relative;
     top:10px
   }
-  .aLaFrancaise .coeur {
+  .menuRestaurant .coeur {
     position: relative;
     bottom:12px
-  }
-  .mesCoeurs:hover .coeur {
-    display: inline;
-  }              
+  }   
+
   .mesCoeurs .coeur {
   display: none;
   z-index: 99;
   width: 27px;
     height: 27px;
+    animation-name: fadein;
+    animation-duration: 0.2s;
   }
+  .mesCoeurs:hover .coeur {
+    display: inline;
+  }  
