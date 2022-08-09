@@ -117,19 +117,19 @@ i {
 }
 @keyframes fadeout {
   from {
-    opacity: 100%;
+    opacity: 1;
   }
   to {
-    opacity: 0%;
+    opacity: 0;
     visibility: hidden;
   }
 }
 @-webkit-keyframes fadeout {
   from {
-    opacity: 100%;
+    opacity: 1;
   }
   to {
-    opacity: 0%;
+    opacity: 0;
     visibility: hidden;
   }
 }
@@ -172,6 +172,7 @@ i {
 @keyframes abracadabra-M1 {
   from {
     opacity: 0;
+    margin-top: 30px;
   }
   10% {
     opacity: 0;
@@ -195,6 +196,7 @@ i {
 @-webkit-keyframes abracadabra-M1 {
   from {
     opacity: 0;
+    margin-top: 30px;
   }
   10% {
     opacity: 0;
@@ -218,6 +220,7 @@ i {
 @keyframes abracadabra-M2 {
   from {
     opacity: 0;
+    margin-top: 30px;
   }
   30% {
     opacity: 0;
@@ -241,6 +244,7 @@ i {
 @-webkit-keyframes abracadabra-M2 {
   from {
     opacity: 0;
+    margin-top: 30px;
   }
   30% {
     opacity: 0;
@@ -264,6 +268,7 @@ i {
 @keyframes abracadabra-M3 {
   from {
     opacity: 0;
+    margin-top: 30px;
   }
   50% {
     opacity: 0;
@@ -287,6 +292,7 @@ i {
 @-webkit-keyframes abracadabra-M3 {
   from {
     opacity: 0;
+    margin-top: 30px;
   }
   50% {
     opacity: 0;
@@ -305,6 +311,68 @@ i {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes coeurMulticolore {
+  from {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes coeurMulticolore {
+  from {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes troisPetitsPoints {
+  0% {
+    padding-right: 0;
+  }
+  100% {
+    padding-right: 100px;
+  }
+}
+@keyframes troisPetitsPoints {
+  0% {
+    max-width: 100%;
+  }
+  100% {
+    max-width: 55%;
   }
 }
 .toque {
@@ -326,7 +394,7 @@ main {
 footer {
   background-color: #353535;
   color: white;
-  padding-left:10px ;
+  padding-left: 10px;
 }
 /* -----------------------------------BOUTONS--Début----------------------------BOUTONS--Début--------------  */
 .commander__bouton {
@@ -351,7 +419,7 @@ footer {
   margin: 50px auto 30px auto;
 }
 .commander__bouton:hover, .fonctionnement__bouton:hover /* Boutons :HOVER */ {
-  opacity: 90%;
+  opacity: 0.9;
   box-shadow: 0px 3px 6px Grey;
 }
 /* -------Fonctionnement Bouton---début----*/
@@ -466,20 +534,22 @@ a > .card {
 }
 .bodyCard__i .coeur {
   display: none;
-  position: absolute;
-  top: -2px;
-  left: -1px;
+  position: relative;
+  bottom: 18px;
   z-index: 99;
-  width: 27px;
-  height: 27px;
+  width: 300px;
+  height: 300px;
+  color: transparent;
+  background-image: linear-gradient(#9356dc 0%, #ff79da 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 .bodyCard__i:hover .coeur {
   display: inline;
-  animation-duration: 0.4s;
+  animation-duration: 0.7s;
   animation-name: abracadabra-M1;
 }
 /* ---------- HEADER ---------- */
-
 header div {
   width: 100%;
   display: inline-flex;
@@ -551,7 +621,7 @@ footer a {
   width: 100%;
   height: auto;
   object-fit: cover;
-object-position: center;
+  object-position: center;
   max-height: 300px;
 }
 .menuRestaurant h1 {
@@ -579,36 +649,39 @@ object-position: center;
 .mesCoeurs {
   width: 27px;
   height: 27px;
-  margin: 0 20px 0 0;
+  margin: 0 40px 0 0;
   display: inline;
   align-self: center;
   position: relative;
   top: 10px;
   left: 5px;
-  
 }
 .menuRestaurant .coeurVide {
   position: relative;
   top: 10px;
-
+  width: 27px;
+  height: 27px;
 }
 .menuRestaurant .coeur {
   position: relative;
   bottom: 12px;
-  
 }
 .mesCoeurs .coeur {
   display: none;
   z-index: 99;
-  width: 27px;
-  height: 27px;
-  animation-name: fadein;
-  animation-duration: 0.2s;
+  position: relative;
+  bottom: 25px;
+  width: 300px;
+  height: 300px;
+  color: transparent;
+  background-image: linear-gradient(#9356dc 0%, #ff79da 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 .mesCoeurs:hover .coeur {
   display: inline;
-  animation-duration: 0.4s;
-  animation-name: abracadabra-M1;
+  animation-duration: 0.7s;
+  animation-name: coeurMulticolore;
 }
 /*__________________________________Menu____les 4 pages de restaurants____________________________________________________________*/
 .lesMenus p {
@@ -708,7 +781,10 @@ object-position: center;
 }
 .menuCard:hover .menuCard__Plat {
   max-width: 55%;
+  animation-name: troisPetitsPoints;
+  animation-duration: 0.5s;
 }
+
 .M1 {
   animation-name: abracadabra-M1;
   animation-duration: 3s;
@@ -723,48 +799,50 @@ object-position: center;
 }
 /* ________________________MEDIA QUERIES_____________________________________________*/
 @media only screen and (min-width: 1024px) {
-.lesDesserts, .lesEntrees, .lesPlats {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 33%;
+  .lesDesserts,
+  .lesEntrees,
+  .lesPlats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 33%;
+  }
+  .lesMenus {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .fonctionnement {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+  }
+  .fonctionnement__bouton {
+    width: 27%;
+    margin-top: 40px;
+  }
+  .fonctionnement .commeUnTitre {
+    position: absolute;
+    bottom: 100px;
+  }
+  .restaurant {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 70px;
+    position: relative;
+  }
+  .card {
+    width: 25%;
+  }
+  .restaurant .commeUnTitre {
+    position: absolute;
+    bottom: 300px;
+  }
 }
-.lesMenus {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.fonctionnement {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  position: relative;
-}
-.fonctionnement__bouton {
-width: 27%;
-margin-top: 40px;
-}
-.fonctionnement .commeUnTitre{
-  position: absolute;
-bottom: 100px;
-}
-.restaurant {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding-top: 70px;
-  position: relative;
-}
-.card {
-  width: 25%;
-}
-.restaurant .commeUnTitre {
-  position: absolute;
-  bottom: 300px;
-}
-}
-@media only screen and (min-width: 768px)and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant {
     display: flex;
     flex-direction: row;
@@ -773,16 +851,16 @@ bottom: 100px;
     padding-top: 70px;
     position: relative;
   }
-.restaurant  a {
+  .restaurant a {
     width: 50%;
   }
   .restaurant .commeUnTitre {
     position: absolute;
     bottom: 565px;
   }
-  .fonctionnement .commeUnTitre{
+  .fonctionnement .commeUnTitre {
     display: flex;
-   justify-content: center;
-   margin-top: 0;
+    justify-content: center;
+    margin-top: 0;
   }
 }
